@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Character Page</title>
+</head>
+<body>
+
+ <h1>Create Character</h1>
+ Name: <input type="text" name="Enter Name">
+  
+
+
+ <div ng-app="thisApp" ng-controller="myCtrl">
+ <button ng-click="Ability()">Abilities</button>
+   
+  <h1>Strength: {{strength}}</h1>
+  <h1>Intelligence: {{intelligence}}</h1>
+  <h1>Wisdom: {{wisdom}}</h1>
+  <h1>Dexterity: {{dexterity}}</h1>
+  <h1>Constitution: {{constitution}}</h1>
+  <h1>charisma: {{charisma}}</h1>
+
+</div>
+</body>
+
+<script type="text/javascript" src="power.js"></script>
+</html>
