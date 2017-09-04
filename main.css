@@ -25,3 +25,64 @@
    border: solid;
    cursor: pointer;
 }
+
+.war1 {
+	position: fixed;
+    top: 20px;
+    left: 250px;
+    width: 200px;
+    height: 200px;
+    float: right;
+
+     
+}
+
+.wiz1 {
+	position: fixed;
+    top: 20px;
+    left: 470px;
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+.thief1 {
+	position: fixed;
+    top: 20px;
+    left: 650px;
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+.bard1 {
+	position: fixed;
+    top: 320px;
+    left: 250px;
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+.healer1 {
+	position: fixed;
+    top: 300px;
+    left: 470px;
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+.dragonKnight1 {
+	position: fixed;
+    top: 300px;
+    left: 650px;
+    width: 200px;
+    height: 200px;
+    float: right;
+}
+
+#warrior1-play {
+	text-align: center;
+ 
+}
