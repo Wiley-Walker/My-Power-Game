@@ -1,14 +1,18 @@
-var strength = 0;
-var intelligence = 0;
-var wisdom = 0;
-var dexterity = 0;
-var charisma = 0;
-var constitution = 0;
+ 
 var health = 0;
 var magic = 0;
+$( ".gameDiv").hide();
+
+
+document.getElementById("warrior-button").disabled = true;
+document.getElementById("wizard-button").disabled = true;
+document.getElementById("thief-button").disabled = true;
+document.getElementById("bard-button").disabled = true;
+document.getElementById("healer-button").disabled = true;
+document.getElementById("dragon-button").disabled = true;
 
 		// Determine Character Abilities
-var app = angular.module('thisApp', []);
+var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
      
     $scope.Ability = function() {
@@ -18,18 +22,28 @@ app.controller('myCtrl', function($scope) {
         $scope.dexterity = randomNumber();
         $scope.charisma = randomNumber();
         $scope.constitution = randomNumber();
+
+
+        s = $scope.strength;
+        i = $scope.intelligence;
+        w = $scope.wisdom;
+        d = $scope.dexterity;
+        c = $scope.charisma;
+        co = $scope.constitution;
+
+        var newAbilities = [s, i, w, d, c, co]
+        console.log("hey this is the new ability" + newAbilities);
 		 
 
 		// Determine which characters are playable
+		if ($scope.strength <12){
 
-		if ($scope.strength < 12) {
-			  
-			 document.getElementById("warrior-button").disabled = true;
+			document.getElementById("warrior-button").disabled = true;
 		}
-		else{
-			 
+		else {
 			document.getElementById("warrior-button").disabled = false;
 		}
+		 
 
 		if ($scope.intelligence <12){
 
@@ -46,7 +60,7 @@ app.controller('myCtrl', function($scope) {
 			document.getElementById("thief-button").disabled = false;
 		}
 
-		if ($scope.charisma && $scope.wisdom < 12) {
+		if ($scope.charisma < 12 || $scope.wisdom < 12) {
 			document.getElementById("bard-button").disabled = true;
 		}
 		else {
@@ -66,6 +80,8 @@ app.controller('myCtrl', function($scope) {
     	else {
     		document.getElementById("dragon-button").disabled = false;
     	}
+    	console.log("look e here");
+    	return newAbilities;
 }
          
 });
@@ -75,11 +91,95 @@ function randomNumber()  {
 	return num;
 }
 
+function playWarrior () {
+	$( ".wiz1" ).remove();
+	$( ".thief1" ).remove();
+	$( ".bard1" ).remove();
+	$( ".healer1" ).remove();
+	$( ".dragonKnight1" ).remove();
+	$( ".mainDiv").remove();
+	health = 400;
+	magic = 0;
+	experience = 0;
+	playGame();
+
+	 
+
+}
+
+function playWizard () {
+$( ".thief1" ).remove();
+	$( ".bard1" ).remove();
+	$( ".healer1" ).remove();
+	$( ".dragonKnight1" ).remove();
+	$( ".war1").remove();
+	$( ".mainDiv").remove();
+	playGame();
+	 
+}
+
+function playBard () {
+$( ".thief1" ).remove();
+	 
+	$( ".healer1" ).remove();
+	$( ".dragonKnight1" ).remove();
+	$( ".war1").remove();
+	$( ".wiz1" ).remove();
+}
+
+function playHealer() {
+$( ".thief1" ).remove();
+	$( ".bard1" ).remove();
+	 
+	$( ".dragonKnight1" ).remove();
+	$( ".war1").remove();
+	$( ".wiz1" ).remove();
+}
+
+function playThief () {
+ 
+	$( ".bard1" ).remove();
+	$( ".healer1" ).remove();
+	$( ".dragonKnight1" ).remove();
+	$( ".war1").remove();
+	$( ".wiz1" ).remove();
+}
+
+function playKnight () {
+$( ".thief1" ).remove();
+	$( ".bard1" ).remove();
+	$( ".healer1" ).remove();
+	 
+	$( ".war1").remove();
+	$( ".wiz1" ).remove();
+}
+
+function playGame() {
+	$(".gameDiv").show();
+	var strength = s;
+	var intelligence = i;
+	var wisdom = w;
+	var dexterity = d;
+	var constituton = co;
+	var charisma = c;
+	console.log(strength);
+	document.getElementById("strDiv").innerHTML = "Strength: " + strength + "  "
+	document.getElementById("intDiv").innerHTML = "Intelligence: " + intelligence  + "  "
+	document.getElementById("wisDiv").innerHTML = "Wisdom: " + wisdom + "  "
+	document.getElementById("dexDiv").innerHTML = "Dexterity: " + dexterity + "  "
+	document.getElementById("conDiv").innerHTML = "Constitution: " + constituton + "  "
+	document.getElementById("chrDiv").innerHTML = "Charisma: " + charisma + "  "
+ 	document.getElementById("healthDiv").innerHTML = "Health points: " + health + "  "
+    document.getElementById("magicDiv").innerHTML = "Magic Power: " + magic + "  "
+    document.getElementById("expDiv").innerHTML = "Experience Points: " + experience + "  " 
+
+}
+
  
 
 	 
 
-function Ability() {
+/*function Ability() {
 	strength = randomNumber();
 	intelligence = randomNumber();
 	wisdon = randomNumber();
@@ -93,7 +193,7 @@ function Ability() {
 	return charisma;
 	return constituton; 
 console.log("strength = " + strength);
-}
+}*/
 
  
 

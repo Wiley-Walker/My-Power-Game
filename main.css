@@ -86,3 +86,56 @@
 	text-align: center;
  
 }
+
+#abilitiesDiv {
+	display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   border-style: solid;
+   background-color: green;
+}
+
+#strDiv {
+	border-style: solid;
+	color: red;
+}
+
+#intDiv {
+	border-style: solid;
+	color: blue;
+}
+
+#wisDiv {
+	border-style: solid;
+	color: purple;
+} 
+
+#dexDiv {
+	border-style: solid;
+	color: orange;
+}
+
+#conDiv {
+	border-style: solid;
+	color: lightblue;
+}
+
+#chrDiv {
+border-style: solid;
+color: lightgreen;
+}
+
+#healthDiv {
+	border-style: solid;
+	color: aqua;
+}
+#magicDiv {
+	border-style: solid;
+	color: purple;
+}
+
+#expDiv {
+	border-style: solid;
+	color: brown;
+}

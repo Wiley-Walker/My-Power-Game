@@ -1,16 +1,27 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Power Game</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
-<h1>Power Quest</h1> <br>
-<img src="warrior.jpeg">
-<img src="dragon.jpeg" height="400" width="500">
-
-
-<a href="character.html"><button id="start-game">Start Game</button></a>
-
-</body>
+    <head>
+        <title>RoutingDemo App</title>
+    </head>
+    <body ng-app='myApp'>
+     
+        <h2>AngularJS Routing Application</h2>
+         
+         
+        <div ng-view></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    	<script type="text/javascript" src="power.js"></script>
+        <script>
+            angular.module('myApp',['ngRoute'])
+            .config(['$routeProvider', function($routeProvider){
+                $routeProvider
+                .when('/',{templateUrl:'new.html'})
+                .when('/computers',{templateUrl: 'character.html',})
+                .when('/printers',{template:'This is the printers Route'})
+                .otherwise({redirectTo:'/'});
+            }]);
+        </script>
+     
+     
+    </body>
 </html>

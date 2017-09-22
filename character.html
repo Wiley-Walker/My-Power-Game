@@ -2,57 +2,89 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+	
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<title>Character Page</title>
 </head>
 <body>
 
- <h1>Create Character</h1>
- Name: <input type="text" name="Enter Name">
-  
+	<div class = "mainDiv">
+	<div ng-app="myApp">
+		 <h1>Create Character</h1>
+		 Name: <input type="text" name="Enter Name">
+		  
 
 
- <div ng-app="thisApp" ng-controller="myCtrl">
- <button ng-click="Ability()">Abilities</button>
-   
-  <h1>Strength: {{strength}}</h1>
-  <h1>Intelligence: {{intelligence}}</h1>
-  <h1>Wisdom: {{wisdom}}</h1>
-  <h1>Dexterity: {{dexterity}}</h1>
-  <h1>Constitution: {{constitution}}</h1>
-  <h1>charisma: {{charisma}}</h1>
+		 <div ng-controller="myCtrl">
+		 	<button ng-click="Ability()">Abilities</button>
+		   
+			  <h3>Strength: {{strength}}</h3>
+			  <h3>Intelligence: {{intelligence}}</h3>
+			  <h3>Wisdom: {{wisdom}}</h3>
+			  <h3>Dexterity: {{dexterity}}</h3>
+			  <h3>Constitution: {{constitution}}</h3>
+			  <h3>charisma: {{charisma}}</h3>
+
+		</div>
+	</div>	
+
+		<div class="war1">
+			<img class="warrior1" src="warrior1.jpeg">
+			<button id="warrior-button" onclick="playWarrior()">Warrior</button>
+		</div>
+
+		<div class="wiz1">
+			<img class="wizard1" src="wizard.jpeg">
+			<button id="wizard-button" onclick="playWizard()">Wizard</button>
+		</div>
+
+		<div class="thief1">
+			<img class="thief2" src="thief.jpeg">
+			<button id="thief-button" onclick="playThief()">Thief</button>
+		</div>
+
+		<div class="bard1">
+			<img class = "bard2" src="bard.jpeg">
+			<button id="bard-button" onclick="playBard()">Bard</button>
+		</div>
+
+		<div class="healer1">
+			<img class="healer2" src="healer.jpeg">
+			<button id="healer-button" onclick="playHealer()">Healer</button>
+		</div>
+
+		<div class="dragonKnight1">
+			<img class="draKinght1" src="dragonKinght.jpeg">
+			<button id="dragon-button" onclick="playKnight()">Dragon Knight    </button>
+		</div>
+	</div>
+<div ng-view></div>
+
+<div class = "gameDiv">
+
+<div id="abilitiesDiv">
+<p id="strDiv"></p>
+<p id="intDiv"></p>
+<p id="wisDiv"></p>
+<p id="dexDiv"></p>
+<p id="conDiv"></p>
+<p id="chrDiv"></p>
+<p id="healthDiv"></p>
+<p id="magicDiv"></p>
+<p id="expDiv"></p>
+</div>
+		 
+			 
+		</div>
 
 </div>
 
-<div class="war1">
-<img class="warrior1" src="warrior1.jpeg">
-<button id="warrior-button" onclick="location.href = 'warrior-Town.html';">Warrior</button>
-</div>
-
-<div class="wiz1">
-<img class="wizard1" src="wizard.jpeg">
-<button id="wizard-button" onclick="location.href = 'warrior-Town.html';">Wizard</button>
-</div>
-
-<div class="thief1">
-<img class="thief2" src="thief.jpeg">
-<button id="thief-button" onclick="location.href = 'warrior-Town.html';">Thief</button>
-</div>
-
-<div class="bard1">
-<img class = "bard2" src="bard.jpeg">
-<button id="bard-button" onclick="location.href = 'warrior-Town.html';">Bard</button>
-</div>
-
-<div class="healer1">
-<img class="healer2" src="healer.jpeg">
-<button id="healer-button" onclick="location.href = 'warrior-Town.html';">Healer</button>
-</div>
-
-<div class="dragonKnight1">
-<img class="draKinght1" src="dragonKinght.jpeg">
-<button id="dragon-button" onclick="location.href = 'warrior-Town.html';">Dragon Knight    </button>
-</div>
 
 
 
@@ -60,10 +92,9 @@
 
 
 
-
-
-
-</body>
+<script type="text/javascript" src="play.js"></script>
 
 <script type="text/javascript" src="power.js"></script>
+</body>
+
 </html>
