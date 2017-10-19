@@ -101,6 +101,7 @@ function playWarrior () {
 	health = 400;
 	magic = 0;
 	experience = 0;
+	attack = s * 5;
 	playGame();
 
 	 
@@ -125,6 +126,9 @@ $( ".thief1" ).remove();
 	$( ".dragonKnight1" ).remove();
 	$( ".war1").remove();
 	$( ".wiz1" ).remove();
+	$( ".mainDiv").remove();
+	playGame();
+
 }
 
 function playHealer() {
@@ -134,6 +138,8 @@ $( ".thief1" ).remove();
 	$( ".dragonKnight1" ).remove();
 	$( ".war1").remove();
 	$( ".wiz1" ).remove();
+	$( ".mainDiv").remove();
+	playGame();
 }
 
 function playThief () {
@@ -143,6 +149,12 @@ function playThief () {
 	$( ".dragonKnight1" ).remove();
 	$( ".war1").remove();
 	$( ".wiz1" ).remove();
+	$( ".mainDiv").remove();
+	health = 200;
+	magic = 0;
+	experience = 0;
+	attack = s * 2;
+	playGame();
 }
 
 function playKnight () {
@@ -152,28 +164,98 @@ $( ".thief1" ).remove();
 	 
 	$( ".war1").remove();
 	$( ".wiz1" ).remove();
+	$( ".mainDiv").remove();
+	playGame();
 }
 
 function playGame() {
+
+	
+/*var items = '{ "weapons" : [' +
+'{ "type":"dagger" , "damage":"10" },' +
+'{ "type":"sword" , "damage":"15" },' +
+'{ "type":"axe" , "damage":"20" } ]}';
+
+obj = JSON.parse(items);*/
 	$(".gameDiv").show();
+	$(".shopDiv").hide();
+	$(".itemsDiv").hide();
+	
 	var strength = s;
 	var intelligence = i;
 	var wisdom = w;
 	var dexterity = d;
 	var constituton = co;
 	var charisma = c;
+	i = 0;
+	items = [];
 	console.log(strength);
-	document.getElementById("strDiv").innerHTML = "Strength: " + strength + "  "
-	document.getElementById("intDiv").innerHTML = "Intelligence: " + intelligence  + "  "
-	document.getElementById("wisDiv").innerHTML = "Wisdom: " + wisdom + "  "
-	document.getElementById("dexDiv").innerHTML = "Dexterity: " + dexterity + "  "
-	document.getElementById("conDiv").innerHTML = "Constitution: " + constituton + "  "
-	document.getElementById("chrDiv").innerHTML = "Charisma: " + charisma + "  "
- 	document.getElementById("healthDiv").innerHTML = "Health points: " + health + "  "
-    document.getElementById("magicDiv").innerHTML = "Magic Power: " + magic + "  "
-    document.getElementById("expDiv").innerHTML = "Experience Points: " + experience + "  " 
+	document.getElementById("strDiv").innerHTML = "Strength: " + strength + "  ";
+	document.getElementById("intDiv").innerHTML = "Intelligence: " + intelligence  + "  ";
+	document.getElementById("wisDiv").innerHTML = "Wisdom: " + wisdom + "  ";
+	document.getElementById("dexDiv").innerHTML = "Dexterity: " + dexterity + "  ";
+	document.getElementById("conDiv").innerHTML = "Constitution: " + constituton + "  ";
+	document.getElementById("chrDiv").innerHTML = "Charisma: " + charisma + "  ";
+ 	document.getElementById("healthDiv").innerHTML = "Health points: " + health + "  ";
+    document.getElementById("magicDiv").innerHTML = "Magic Power: " + magic + "  ";
+    document.getElementById("expDiv").innerHTML = "Experience Points: " + experience + "  "; 
+    document.getElementById("attackDiv").innerHTML = "Attack Power: " + attack + "  ";
 
 }
+    
+    function buyWeapons() {
+    	$(".shopDiv").show();
+    	console.log("I was clicked");
+	}
+
+	function showItems() {
+		$(".itemsDiv").show();
+	}
+
+	function exitWeap() {
+		$(".shopDiv").hide();
+	}
+
+	document.getElementById("sword").addEventListener("click", buySword);
+	document.getElementById("dagger").addEventListener("click", buydagger);
+
+		 
+
+	function buySword() {
+
+		items.push("sword");
+		 var list = document.getElementsByClassName("items1")[0];
+		 console.log("this is list " + items);
+
+    	list.getElementsByClassName("child")[i].innerHTML = "sword";
+    i = i + 1;
+
+}
+
+    function buydagger() {
+
+		items.push("dagger");
+		 var list = document.getElementsByClassName("items1")[0];
+		 console.log("this is list " + items);
+
+    	list.getElementsByClassName("child")[i].innerHTML = "dagger";
+    i = i + 1;
+
+}
+
+
+
+
+
+
+
+	
+
+	
+    	 
+
+
+
 
  
 

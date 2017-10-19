@@ -139,3 +139,40 @@ color: lightgreen;
 	border-style: solid;
 	color: brown;
 }
+
+#attackDiv {
+	border-style: solid;
+	color: white;
+}
+
+.shopDiv {
+  border-style: solid;
+  border-color: red;
+  border-width: 10px;
+  width: 200px;
+}
+
+#sword:hover {
+  color: red;
+
+}
+
+#dagger:hover {
+  color:red;
+}
+
+#axe:hover {
+  color:red;
+}
+
+#longSword:hover {
+  color:red;
+}
+
+.itemsDiv {
+  width: 200px;
+  height: 200px;
+  border-style: solid;
+  border-color: green;
+  
+}

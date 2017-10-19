@@ -66,24 +66,66 @@
 	</div>
 <div ng-view></div>
 
-<div class = "gameDiv">
+	<div class = "gameDiv">
 
-<div id="abilitiesDiv">
-<p id="strDiv"></p>
-<p id="intDiv"></p>
-<p id="wisDiv"></p>
-<p id="dexDiv"></p>
-<p id="conDiv"></p>
-<p id="chrDiv"></p>
-<p id="healthDiv"></p>
-<p id="magicDiv"></p>
-<p id="expDiv"></p>
-</div>
-		 
-			 
+		<div id="abilitiesDiv">
+			<p id="strDiv"></p>
+			<p id="intDiv"></p>
+			<p id="wisDiv"></p>
+			<p id="dexDiv"></p>
+			<p id="conDiv"></p>
+			<p id="chrDiv"></p>
+			<p id="healthDiv"></p>
+			<p id="attackDiv"></p>
+			<p id="magicDiv"></p>
+			<p id="expDiv"></p>
 		</div>
 
-</div>
+		<div id="townDiv">
+
+			<img src="town.jpeg">
+			<br>
+			<button id="buyItems" onclick="buyWeapons()">Buy Items</button>
+			<button id="adventureButton">Adventure</button>
+			<button id="showItems" onclick="showItems()">Inventory</button>
+
+			<div class="shopDiv">
+			<p>SHOP</p>
+				<ul style="list-style-type:circle">
+				  <li id="sword">Sword: 20gp</li>
+				  <li id="dagger">Dagger: 10gp</li>
+				  <li id="axe">Axe: 15gp</li>
+				  <li id="longSword">Long Sword: 30gp</li>
+				  <button id="exitWeapons" onclick="exitWeap()">EXIT</button>
+				</ul> 
+				 
+			</div>
+
+			 
+				<ul class="items1">
+  					<li class="child">none</li>
+  					<li class="child">none</li>
+  					<li class="child">none</li>
+  					<li class="child">none</li>
+  					<li class="child">none</li>
+  					<li class="child">none</li>
+  					<li class="child">none</li>
+  					<li class="child">none</li>
+				</ul>
+			 
+		
+
+
+		</div>
+	</div>
+
+
+
+
+		 
+			 
+
+ 
 
 
 
